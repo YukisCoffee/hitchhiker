@@ -45,7 +45,9 @@ function genVideoInfo($primary, $secondary)
    $ownerName = $secondary->owner->videoOwnerRenderer->title->runs[0]->text;
    $ownerPhoto = $secondary->owner->videoOwnerRenderer->thumbnail->thumbnails[0]->url;
    $ownerUrl = $secondary->owner->videoOwnerRenderer->navigationEndpoint->commandMetadata->webCommandMetadata->url;
-   $description = genDescription($secondary->description->runs);
+   $description = (isset($secondary->description)) 
+      ? genDescription($secondary->description->runs)
+      : "";
    
    return
       [
