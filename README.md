@@ -4,7 +4,7 @@ A frontend for the InnerTube/YouTubeI API, designed after YouTube's 2013 Hitchhi
 
 ## A disclaimer
 
-I am a person with my own personal life. As such, updates may be rare. This is just a passion project, and I suggest you follow the development of AubyMori's similar project on [/r/OldYouTubeLayout](https://old.reddit.com/r/oldyoutubelayout).
+I am a person with my own personal life. As such, updates may be rare. This is just a passion project, and I suggest you follow the development of Nightlinbit and aubymori's similar project on [/r/OldYouTubeLayout](https://old.reddit.com/r/oldyoutubelayout).
 
 If you want to make pull requests of your own, please go ahead. I am not the best at PHP and that will show in the quality of my code.
 
