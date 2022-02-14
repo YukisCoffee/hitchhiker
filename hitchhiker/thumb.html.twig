@@ -1,0 +1,20 @@
+{% macro thumb(src, width, type = "default") %}
+<span class="video-thumb  yt-thumb yt-thumb-{{ width }}">
+   {{ _self.typed_thumb(src, width, type) }}
+</span>
+{% endmacro %}
+
+{% macro thumb_clip(src, width) %}
+<span class="yt-thumb-clip">
+  <span class="yt-thumb-clip-inner">
+    <img src="{{ src }}" alt="Thumbnail" width="{{ width }}" >
+    <span class="vertical-align"></span>
+  </span>
+</span>
+{% endmacro %}
+
+{% macro typed_thumb(src, width, type) %}
+<span class="yt-thumb-{{ type }}">
+  {{ _self.thumb_clip(src, width) }}
+</span>
+{% endmacro %}

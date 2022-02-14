@@ -1,0 +1,17 @@
+{% macro thumb_wrap(width, watchLaterButton, videoId, src, time, embedAnchor = true) %}
+{% import "/thumb.html.twig" as thumb %}
+{% if embedAnchor %}
+<a href="/watch?v={{ videoId }}" class="ux-thumb-wrap yt-uix-sessionlink yt-uix-contextlink contains-addto lohp-thumb-wrap spf-link"  data-sessionlink="">
+{% endif %}
+   {{ thumb.thumb(src, width) }}
+   {% if time %}
+      <span class="video-time">{{ time }}</span>
+   {% endif %}
+   {% if watchLaterButton %}
+      <button class="addto-button video-actions spf-nolink addto-watch-later-button{{ not global.signedIn ? '-sign-in' }} yt-uix-button yt-uix-button-default yt-uix-button-size-small yt-uix-tooltip" title="Watch Later" type="button" onclick=";return false;" {{ not global.signedIn ? 'data-button-menu-id="shared-addto-watch-later-login"' }} data-video-ids="{{ videoId}}" role="button"><span class="yt-uix-button-content">  <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="Watch Later">
+      </span>{{ not global.signedIn ? '<img class="yt-uix-button-arrow" src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="" title="">' }}</button>
+   {% endif %}
+{% if embedAnchor %}
+</a>
+{% endif %}
+{% endmacro %}

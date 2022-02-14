@@ -1,0 +1,39 @@
+{%- macro grid_item(context) -%}
+   {% import "/contentlink/thumb_wrap.html.twig" as thumb_wrap %}
+   
+   {% set videoId = context.videoId %}
+   {% set thumbnail = context.thumbnail %}
+   {% set time = context.time %}
+   {% set title = context.title %}
+   {% set owner = context.owner %}
+   {% set ownerUrl = context.ownerUrl %}
+   {% set views = context.views %}
+   {% set date = context.date %}
+   
+   <div class="yt-lockup clearfix  yt-lockup-video yt-lockup-grid vve-check context-data-item">
+      <div class="yt-lockup-thumbnail">
+         {{ thumb_wrap.thumb_wrap(175, true, videoId, thumbnail, time) }}
+      </div>
+
+      <div class="yt-lockup-content">
+         <h3 class="yt-lockup-title">
+            <a class="yt-uix-sessionlink yt-uix-tile-link yt-uix-contextlink yt-ui-ellipsis yt-ui-ellipsis-2" dir="ltr" title="{{ title }}" data-sessionlink="" href="/watch?v={{ videoId }}">
+            <span class="yt-ui-ellipsis-wrapper">{{ title }}</span>
+            </a>
+         </h3>
+         <div class="yt-lockup-meta">
+            <ul class="yt-lockup-meta-info">
+               <li>
+                  by <a href="{{ ownerUrl }}" class="g-hovercard yt-uix-sessionlink yt-user-name " data-sessionlink="" dir="ltr" data-name="g-high-rec">{{ owner }}</a>
+               </li>
+               <li>{{ views }}</li>
+               {% if date %}
+               <li class="yt-lockup-deemphasized-text">
+                  {{ date }}
+               </li>
+               {% endif %}
+            </ul>
+         </div>
+      </div>
+   </div>
+{%- endmacro -%}
