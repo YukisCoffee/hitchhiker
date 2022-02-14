@@ -12,7 +12,7 @@ If you want to make pull requests of your own, please go ahead. I am not the bes
 
 The following issues are already acknowledged, and probably will be patched in a later release.
 
-- No player (I need to research player init, if you can contact Reprety/V3 Developer, please send him [/u/YukisCoffee](https://old.reddit.com/user/YukisCoffee. Thank you <3)
+- No player (I need to research player init, if you can contact Reprety/V3 Developer, please send him [/u/YukisCoffee](https://old.reddit.com/user/YukisCoffee). Thank you <3)
 - Video and subscription counts display as 0 on watch. These simply are hardcoded placeholder values until the proper code is written.
 - Missing category in video descriptions (needs player API, which currently isn't requested).
 - Watch doesn't acknowledge being signed in.
