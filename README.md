@@ -75,6 +75,16 @@ Note that on Windows, the command is `mitmdump`. On Unix systems, this will be `
 
 I tested this with Discord image uploading, and it seems to work as it should. Please make an issue if problems arise.
 
+### Hostsfile Configuration
+
+Too badass for mitmproxy? Give hostsfile a try!
+
+I did all the work for you, actually. The requests library overcomes the need for a proxy at all by using manual nameserver lookups that bypass your system's hostsfile for requests. **This may also be useful for you if you are having trouble with any proxy.**
+
+All you need to do is host this on localhost, add the rule to your hostsfile, enable it in the frontend `config.json` file, and then... [set up SSL for it to work at all](https://www.webdesignvista.com/install-ssl-certificate-for-localhost-xampp-windows/). As it turns out, YouTube uses HSTS, so you will probably get an SSL error that your browser doesn't let you bypass instead of the YouTube website.
+
+<sub>I still recommend using a proxy, just because it's more user friendly 🥰</sub>
+
 ## Roadmap
 
 At this point in development, most things are unfinished or only partially finished.

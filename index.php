@@ -26,8 +26,11 @@ function mainInit($path)
    require "base/request.php";
    require "base/utils.php";
    require "base/signin.php";
+   require "base/GlobalStore.php";
    require "youtubei/Youtubei.php";
    require "pages.php";
+   
+   GlobalStore::import("json", "config", "config.json");
    
    $twigVars = [];
    $twigTemplate = "";
