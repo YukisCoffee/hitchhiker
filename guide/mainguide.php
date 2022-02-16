@@ -59,17 +59,21 @@ function mainguide($selectedItem, &$global)
 
 function guideFindTheSection($array, $sectionName)
 {
-   for ($i = 0; $i < @count($array); $i++)
+   /**
+    * BUG (nightlinbit): Strictly typed count() as of
+    * PHP 8.0.0; throws fatal when encountering an stdClass. 
+    *
+    * It wasn't used at all anyway, so the fix was just removing it.
+    */
+   if (is_array($array) && isset($array[$sectionName]))
    {
-      if (is_array($array) && isset($array[$sectionName]))
-      {
-         return $array[$sectionName];
-      }
-      else if (isset($array->{$sectionName}))
-      {
-         return $array->{$sectionName};
-      }
+      return $array[$sectionName];
    }
+   else if (isset($array->{$sectionName}))
+   {
+      return $array->{$sectionName};
+   }
+   
 }
 
 function findActiveChannelUrl($data)
