@@ -1,3 +1,9 @@
+# ⚠️ ATTENTION! ⚠️
+
+### This project is deprecated.
+
+I am now currently working on a larger project with a lot more progress and support. Please check out [Rehike](//github.com/Rehike/Rehike) if you are interested in a similar project that will actually go somewhere.
+
 # Hitchhiker InnerTube Frontend
 
 A frontend for the InnerTube/YouTubeI API, designed after YouTube's 2013 Hitchhiker. Written in PHP 7. **Heavily work in progress, I do not recommend use at the moment.**
